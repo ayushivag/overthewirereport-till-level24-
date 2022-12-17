@@ -1,0 +1,135 @@
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Level 0 
+Okay so in the beginning we use the command : ssh bandit0@bandit.labs.overthewire.org -p 2220
+to connect the user bandit 0 to the host with name bandit.labs.overthewire.org and port number 2220 -p switch is used for port number.
+Then on pressing enter it will ask for the password and as it is given in the question 'bandit 0'.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Level 0 - Level 1
+Now we look for another password. For that we write the command ls -alps this command provides a list of all the files in the directory
+so that we can find a readme file which contains the password.So after executing this we find a readme file and
+to display its content we use the command cat readme. The cat command concatenates and prints whats in the file readme.
+On executing this command we will get the password for the next level i.e. level 1. Now we switch over to another user named bandit1 
+For that we first logout from this server by using the command 'exit'.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Level 1 - Level 2
+Now we again connect the user bandit1 to host by the command : ssh bandit1@bandit.labs.overthewire.org -p 2220
+and there we paste the password that we just retrieved from the readme file in the previous question. 
+Now we again check the list of the files by entering ls -alps and find the '-' file.
+And now to display its content we use the command cat ./- 
+Executing this gives us our password. And so now we logout by using 'exit' command to connect to the next user that is bandit2.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Level 2 - Level 3
+Now we again connect the user bandit2 to host by the command : ssh bandit2@bandit.labs.overthewire.org -p 2220
+and there we paste the password that we just retrieved from the previous question. 
+Now we again check the list of the files by entering ls -alps and find the 'spaces in this filename' file.
+And now to display its content we use the command 'cat spaces\ in\ this\ filename'.
+Executing this gives us our password. And so now we logout by using 'exit' command to connect to the next user that is bandit3.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Level 3 - Level 4
+Now we again connect the user bandit3 to host by the command : ssh bandit3@bandit.labs.overthewire.org -p 2220
+and there we paste the password that we just retrieved from the previous question. 
+Now we again check the list of the files by entering ls -alps and find the 'inhere' directory. 
+Then press 'cd inhere' to change our directory to 'inhere' and then press ls -al to list the content of this directory and
+there we can see there is a hidden file there named .hidden.We can know if a file is hidden or not if it contains a '.' in the prefix.
+And now to display its content we use the command 'cat .hidden'.
+Executing this gives us our password. And so now we logout by using 'exit' command to connect to the next user that is bandit4.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Level 4 - Level 5
+Now we again connect the user bandit4 to host by the command : ssh bandit4@bandit.labs.overthewire.org -p 2220
+and there we paste the password that we just retrieved from the previous question. 
+Now we again check the list of the files by entering ls -alps and find the 'inhere' directory. 
+Then press 'cd inhere' to change our directory to 'inhere' and then press ls to list the content of this directory
+Now to find the human readable file we press the command : find . -type f | xargs file , here find is used to search for a file/directory
+'.' means search in current directory -type helps in filtering files and directories, f switch means files '|' is a pipe operator which takes 
+the output of what is written before it and feeds it as input to what is written after it xargs helps to see if it is a human readable file or not.
+And then where it is written ASCII text thats the human readable file,
+And now to display its content we use the command 'cat humanredable filename'.
+Executing this gives us our password. And so now we logout by using 'exit' command to connect to the next user that is bandit5.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Level 5 - Level 6
+Now we again connect the user bandit5 to host by the command : ssh bandit5@bandit.labs.overthewire.org -p 2220
+and there we paste the password that we just retrieved from the previous question. 
+Now we again check the list of the files by entering ls -alps and find the 'inhere' directory. 
+Then press 'cd inhere' to change our directory to 'inhere'.
+We now execute the command : find . -type f -size 1033c ! executable, here find is used to search for a file/directory
+'.' means search in current directory -type helps in filtering files and directories, f switch means file -size helps to justify size here c represents no. of bytes.
+! executable means non executable
+And now to display its content we use the command 'cat thtfile'.
+Executing this gives us our password. And so now we logout by using 'exit' command to connect to the next user that is bandit6.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Level 6 - Level 7
+Now we again connect the user bandit6 to host by the command : ssh bandit6@bandit.labs.overthewire.org -p 2220
+and there we paste the password that we just retrieved from the previous question. 
+Now to find this file we execute the following command : find / -type f -user bandit7 -group bandit6 -size 33c here the user switch and group switch helps 
+to mention a specific user or group we are searching for and '/' is for searching in entire linux system.
+And now to display its content we use the command 'cat thisfile'.
+Executing this gives us our password. And so now we logout by using 'exit' command to connect to the next user that is bandit7.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Level 7 - Level 8
+Now we again connect the user bandit7 to host by the command : ssh bandit7@bandit.labs.overthewire.org -p 2220
+and there we paste the password that we just retrieved from the previous question. 
+Now we again check the list of the files by entering ls -alps to search for data.txt file.
+Now we execute the command : strings data.txt | grep "millionth", here strings helps in encoding and decoding of base64 strings then its output is feeded 
+to the command after | so grep "millionth" finds the word millionth in the file and then copy the password written next to the word "millionth"
+And so now we logout by using 'exit' command to connect to the next user that is bandit8.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Level 8 - Level 9
+Now we again connect the user bandit8 to host by the command : ssh bandit8@bandit.labs.overthewire.org -p 2220
+and there we paste the password that we just retrieved from the previous question. 
+Now we will first sort this data.txt file by using the command : sort data.txt
+now we will find a unique line by using command uniq : sort data.txt | uniq -c, -c gives the count, Now the line with only 1 count is our password
+We copy this password. And so now we logout by using 'exit' command to connect to the next user that is bandit9.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Level 9 - Level 10
+Now we again connect the user bandit9 to host by the command : ssh bandit9@bandit.labs.overthewire.org -p 2220
+and there we paste the password that we just retrieved from the previous question. 
+Now we will again use strings command : strings data.txt | grep "=", string will encode the characters in data.txt and then | will feed its output to 
+the input of grep and so grep will find the patern of "=" sign and this gives us our password.
+We copy this password.And now we logout by using 'exit' command to connect to the next user that is bandit10.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Level 10 - Level 11
+Now we again connect the user bandit10 to host by the command : ssh bandit10@bandit.labs.overthewire.org -p 2220
+and there we paste the password that we just retrieved from the previous question. 
+Now we execute the command : base64 -d data.txt, here base64 helps to encode/decode to standard output and -d switch is used to decode therefore we get our password.
+We copy this password. And so now we logout by using 'exit' command to connect to the next user that is bandit11.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Level 11 - Level 12
+Now we again connect the user bandit11 to host by the command : ssh bandit11@bandit.labs.overthewire.org -p 2220
+and there we paste the password that we just retrieved from the previous question. 
+Now we first print the content of file data.txt and then we copy paste it to a website which uses ROT13 and then paste its content there and find its ROT13.
+For example, cyberchef etc.
+and then we copy its output and paste it when psasword is required for the next level that is level 12.
+And so now we logout by using 'exit' command to connect to the next user that is bandit12.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
