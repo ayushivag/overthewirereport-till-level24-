@@ -128,8 +128,58 @@ And so now we logout by using 'exit' command to connect to the next user that is
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
+Level 12 - Level 13
+cat data.txt
+nkdir /tmp/ayushi
+cp data.txt /tmp/ayushi
+cd /tmp/ayushi
+ls
+xxd -r data.txt > data
+file data
+mv data file.gz
+gzip -d file.gz
+file file
+mv file file.bz
+bzip2 -d file.bz2
+file file
+mv file file.gz
+gzip -d file.gz
+file file
+mv file file.tar
+tar xf file.tar
+file data5.bin
+rm file.tar
+rm data.txt
+file file
+file data5.bin
+mv data5.bin data.tar
+tar xf data.tar
+file data5.bin
+mv data6.bin data.bz2
+bzip2 -d data.bz2
+file file
+file data
+mv data data.tar
+tar xf data.tar
+file data8.bin
+mv data8.bin data.gz
+gzip -d data.gz
+file data
+cat data
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Level 13 - Level 14
+ls
+ssh -i sshkey.private bandit14@localhost -p 2220
+cat /etc/bandit_pass/bandit14
 
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------
 
+Level 14 - Level 15
+
+nc localhost 30000
+cat /etc/bandit_pass/bandit14
 
 
