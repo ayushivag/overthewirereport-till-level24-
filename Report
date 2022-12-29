@@ -184,9 +184,126 @@ cat /etc/bandit_pass/bandit14
 nc localhost 30000
 exit
 exit
+
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Level 15 - Level 16
 
-cat /etc
+cat /etc/bandit_pass_bandit15
+man nc | grep ssl
+man ncat | grep ssl
+ncat --ssl localhost 30001
+exit
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Level 16 - Level 17
+
+cat /etc/bandit_pass/bandit16
+nmap localhost -p 31000 -32000
+nc localhost 31790 
+ncat --ssl localhost 31790 
+exit
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Level 17 - Level 18
+
+diff passwords.old passwords.new
+exit
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Level 18 - Level 19
+
+man ssh | grep shell
+man ssh | grep terminal
+ssh -t bandit18@bandit.labs.overthewire.org -p 2220 
+exit
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Level 19 - Level 20
+
+ls
+./bandit20-do
+./bandit20-do id
+./bandit20-do ls 
+./bandit20-do cat /etc/bandit_pass/bandit20
+exit 
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Level 20 - Level 21
+
+ls
+./suconnect
+nmap -F localhost 
+exit 
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Level 21 - Level 22
+
+cat /etc/cron.d/
+vim /etc/cron.d/
+ls /etc/cron.d/
+cat /etc/cron.d/cronjob_bandit22
+cat /user/bin/cronjob/bandit22.sh
+cat /tmp/t706lds9S0RqQh9aMcz6ShtAoZKF7fgv
+exit
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Level 22 - Level 23
+
+cat /ect/cron.d/cronjob_bandit23
+cat /user/bin/cronjob_bandit23.sh
+whoami
+$myname
+myname = bandit23
+md5sum 
+echo I am user $myname | md5sum | cut -d ' ' -f 1
+cat /tmp/8cad19486dfbbc3663ea0fbe81326349
+exit
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Level 23 - Level 24
+
+cat /etc/cron.d/cronjob_bandit23
+cat /usr/bin/cronjob_bandit24.sh
+cat /var/spool/
+cat /etc/cron.d/cronjob_bandit24
+vim test.sh 
+ls
+cd /tmp/ayushi
+ls
+rm data 
+cd ..
+mkdir ayuvag 
+cd ayuvag 
+vim test.sh
+ls
+chmod 777 test.sh 
+vim test.sh
+touch pass
+chmod 777 pass 
+ls
+cp test.sh /var/spool/bandit24/
+ls -alps 
+cat test.sh 
+cat pass
+cron
+cron 
+cat pass
+cat pass
+exit
+
+
+
+
 
